@@ -21,6 +21,14 @@ GET `localhost:8080/v1/geo/{id}` - get specified record by id
 
 POST `localhost:8080/v1/geo` - save new record
 
+Example POST request:
+`{
+"deviceId": 112,
+"logDate": "2021-10-10T22:00:00.000+00:00",
+"latitude": "110",
+"longitude": "120"
+}`
+
 ## Additional info
 The database is prepopulated with sample data at application startup.
 
