@@ -9,5 +9,5 @@ import java.util.List;
 @Repository
 public interface GeoRepository extends JpaRepository<Geolocation, Long> {
 
-     List<Geolocation>  findByDeviceId(Long deviceId);
+    List<Geolocation> findByDeviceId(Long deviceId);
 }

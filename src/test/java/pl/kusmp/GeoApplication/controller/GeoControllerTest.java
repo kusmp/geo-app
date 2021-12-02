@@ -29,8 +29,8 @@ class GeoControllerTest {
 
     @Test
     void shouldSaveNewEntityWhenValidParametersProvided() throws Exception {
-        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd", Locale.ENGLISH);
-        Geolocation geolocation = new Geolocation();
+        var formatter = new SimpleDateFormat("yyyy-MM-dd", Locale.ENGLISH);
+        var geolocation = new Geolocation();
         geolocation.setDeviceId(120L);
         geolocation.setLatitude("50");
         geolocation.setLongitude("30");
@@ -45,8 +45,8 @@ class GeoControllerTest {
 
     @Test
     void shouldReturnBadRequestStatusWhenMissingParameter() throws Exception {
-        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd", Locale.ENGLISH);
-        Geolocation geolocation = new Geolocation();
+        var formatter = new SimpleDateFormat("yyyy-MM-dd", Locale.ENGLISH);
+        var geolocation = new Geolocation();
         geolocation.setLatitude("50");
         geolocation.setLongitude("30");
         geolocation.setLogDate(formatter.parse("2021-02-12"));

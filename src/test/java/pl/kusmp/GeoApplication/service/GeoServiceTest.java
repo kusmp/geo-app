@@ -57,11 +57,11 @@ public class GeoServiceTest {
     @Test
     public void shouldReturnAllEntriesBasedOnDeviceId() throws DataException {
         //given
-        List<Geolocation> entries = List.of(createGeolocation(), createGeolocation());
+        var entries = List.of(createGeolocation(), createGeolocation());
         Mockito.when(geoRepositoryMock.findByDeviceId(any())).thenReturn(entries);
 
         //when
-        List<Geolocation> actual = tested.getAllEntriesByDeviceId(2L);
+        var actual = tested.getAllEntriesByDeviceId(2L);
 
         //then
         assertEquals(2, actual.size());
@@ -70,17 +70,17 @@ public class GeoServiceTest {
     @Test(expected = DataException.class)
     public void shouldThrowDataExceptionWhenDeviceIdNotFound() throws DataException {
         //given
-        List<Geolocation> entries = List.of(createGeolocation(), createGeolocation());
+        var entries = List.of(createGeolocation(), createGeolocation());
         Mockito.when(geoRepositoryMock.findByDeviceId(any())).thenReturn(Collections.emptyList());
 
         //when
-       tested.getAllEntriesByDeviceId(2L);
+        tested.getAllEntriesByDeviceId(2L);
 
         //then
     }
 
-    private Geolocation createGeolocation(){
-        Geolocation geolocation = new Geolocation();
+    private Geolocation createGeolocation() {
+        var geolocation = new Geolocation();
         geolocation.setId(1L);
         geolocation.setDeviceId(2L);
         geolocation.setLatitude("50");
